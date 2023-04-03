@@ -1,19 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0c3swemrdpjn"]
+[gd_scene load_steps=4 format=3 uid="uid://jdxg8oh71xmq"]
 
-[ext_resource type="Texture2D" uid="uid://c7ng2cc48jyg3" path="res://Assets/spritesheet_characters.png" id="1_6r63x"]
 [ext_resource type="Script" path="res://Characters/player.gd" id="1_cix0t"]
+[ext_resource type="Texture2D" uid="uid://c7ng2cc48jyg3" path="res://Assets/characters.png" id="2_ihwof"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w26uh"]
 size = Vector2(33, 38)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_cix0t")
+metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_6r63x")
+texture = ExtResource("2_ihwof")
 region_enabled = true
 region_rect = Rect2(0, 0, 56, 43)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-6.5, 0)
 shape = SubResource("RectangleShape2D_w26uh")
+
+[node name="GunBarrel" type="Marker2D" parent="."]
+position = Vector2(32, 10)
