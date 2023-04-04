@@ -16,6 +16,7 @@ func _physics_process(delta):
 
 func set_direction(direction: Vector2):
 	self.direction = direction
+	rotation += direction.angle()
 
 
 func _on_queue_free_timer_timeout():

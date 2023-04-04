@@ -22,6 +22,9 @@ shape = SubResource("RectangleShape2D_w26uh")
 [node name="GunBarrel" type="Marker2D" parent="."]
 position = Vector2(32, 10)
 
+[node name="GunDirection" type="Marker2D" parent="."]
+position = Vector2(33, 10)
+
 [node name="ShotCooldown" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
