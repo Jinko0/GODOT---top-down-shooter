@@ -4,7 +4,8 @@ signal player_fired_bullet(bullet, position, direction)
 
 var bullet = preload("res://Bullets/bullet.tscn")
 
-@onready var gunBarrel = $GunBarrel
+@onready var gun_barrel = $GunBarrel
+@onready var shot_cooldown = $ShotCooldown
 
 @export var move_speed : float = 100
 
@@ -22,7 +23,6 @@ func _physics_process(delta):
 	move_and_slide()
 	
 	### DIRECTION ###
-	
 	look_at(get_global_mouse_position())
 	
 	### SHOOT ###
@@ -31,7 +31,9 @@ func _physics_process(delta):
 
 
 func shoot():
-	var bullet_instance = bullet.instantiate()
-	var direction_to_mouse = gunBarrel.global_position.direction_to(get_global_mouse_position())
-	emit_signal("player_fired_bullet", bullet_instance, gunBarrel.global_position, direction_to_mouse)
+	if shot_cooldown.is_stopped():
+		var bullet_instance = bullet.instantiate()
+		var direction_to_mouse = gun_barrel.global_position.direction_to(get_global_mouse_position())
+		emit_signal("player_fired_bullet", bullet_instance, gun_barrel.global_position, direction_to_mouse)
+		shot_cooldown.start()
 

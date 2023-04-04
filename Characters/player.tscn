@@ -7,8 +7,8 @@
 size = Vector2(33, 38)
 
 [node name="Player" type="CharacterBody2D"]
+show_behind_parent = true
 script = ExtResource("1_cix0t")
-metadata/_edit_lock_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_ihwof")
@@ -16,8 +16,12 @@ region_enabled = true
 region_rect = Rect2(0, 0, 56, 43)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-6.5, 0)
+position = Vector2(-8, 0)
 shape = SubResource("RectangleShape2D_w26uh")
 
 [node name="GunBarrel" type="Marker2D" parent="."]
 position = Vector2(32, 10)
+
+[node name="ShotCooldown" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
