@@ -1,6 +1,7 @@
 extends Area2D
+class_name Bullet
 
-@export var speed : float = 800
+@export var speed : float = 500
 
 @onready var queue_free_timer = $QueueFreeTimer
 
@@ -21,3 +22,9 @@ func set_direction(direction: Vector2):
 
 func _on_queue_free_timer_timeout():
 	queue_free()
+
+
+func _on_body_entered(body):
+	if body.has_method("handle_hit"):
+		body.handle_hit()
+		queue_free()

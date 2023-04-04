@@ -1,13 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0d3qsad1g6sr"]
+[gd_scene load_steps=5 format=3 uid="uid://b0d3qsad1g6sr"]
 
 [ext_resource type="PackedScene" uid="uid://jdxg8oh71xmq" path="res://Characters/player.tscn" id="1_aqsfm"]
 [ext_resource type="Script" path="res://Main/main.gd" id="1_pt76w"]
+[ext_resource type="PackedScene" uid="uid://upytciph88x1" path="res://Characters/enemy.tscn" id="3_3jeov"]
 [ext_resource type="Script" path="res://Main/BulletManager.gd" id="3_61brs"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_pt76w")
 
 [node name="Player" parent="." instance=ExtResource("1_aqsfm")]
+
+[node name="Enemy" parent="." instance=ExtResource("3_3jeov")]
+position = Vector2(248, 120)
 
 [node name="BulletManager" type="Node2D" parent="."]
 script = ExtResource("3_61brs")
