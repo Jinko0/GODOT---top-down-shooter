@@ -1,17 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5ydm3xk8ilra"]
+[gd_scene load_steps=4 format=3 uid="uid://oeppdx3ye55l"]
 
-[ext_resource type="Texture2D" uid="uid://blp10sn444vgr" path="res://Assets/objects.png" id="1_g72c6"]
-[ext_resource type="Script" path="res://Bullets/bullet.gd" id="1_h8q82"]
+[ext_resource type="Script" path="res://Weapons/bullet.gd" id="1_ilxtp"]
+[ext_resource type="Texture2D" uid="uid://blp10sn444vgr" path="res://Assets/objects.png" id="2_w4xam"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yn16p"]
 size = Vector2(4, 10)
 
 [node name="Bullet" type="Area2D"]
 rotation = 1.5708
-script = ExtResource("1_h8q82")
+script = ExtResource("1_ilxtp")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_g72c6")
+texture = ExtResource("2_w4xam")
 region_enabled = true
 region_rect = Rect2(198, 46, 4, 10)
 
