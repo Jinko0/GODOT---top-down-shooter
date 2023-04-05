@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
-var health : int = 100
+@onready var stats_manager = $StatsManager
 
 func handle_hit():
-	health-=20
-	if health <= 0: queue_free()
-	
+	stats_manager.health -= 20
+	if stats_manager.health <= 0:
+		queue_free()
+

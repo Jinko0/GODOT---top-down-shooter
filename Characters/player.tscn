@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://jdxg8oh71xmq"]
+[gd_scene load_steps=6 format=3 uid="uid://jdxg8oh71xmq"]
 
 [ext_resource type="Script" path="res://Characters/player.gd" id="1_cix0t"]
 [ext_resource type="Texture2D" uid="uid://c7ng2cc48jyg3" path="res://Assets/characters.png" id="2_ihwof"]
 [ext_resource type="PackedScene" uid="uid://ck7ad4v2s2t0h" path="res://Weapons/weapon.tscn" id="3_d2wlu"]
+[ext_resource type="PackedScene" uid="uid://b01pa6jgng3ak" path="res://Characters/stats_manager.tscn" id="4_c50g5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w26uh"]
 size = Vector2(28, 39)
@@ -22,3 +23,5 @@ shape = SubResource("RectangleShape2D_w26uh")
 
 [node name="Weapon" parent="." instance=ExtResource("3_d2wlu")]
 position = Vector2(24, 10)
+
+[node name="StatsManager" parent="." instance=ExtResource("4_c50g5")]

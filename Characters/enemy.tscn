@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://upytciph88x1"]
+[gd_scene load_steps=7 format=3 uid="uid://upytciph88x1"]
 
 [ext_resource type="Script" path="res://Characters/enemy.gd" id="1_oore0"]
 [ext_resource type="Texture2D" uid="uid://c7ng2cc48jyg3" path="res://Assets/characters.png" id="2_5akq2"]
 [ext_resource type="PackedScene" uid="uid://ck7ad4v2s2t0h" path="res://Weapons/weapon.tscn" id="3_3u1vn"]
+[ext_resource type="PackedScene" uid="uid://b01pa6jgng3ak" path="res://Characters/stats_manager.tscn" id="4_mw1u7"]
+[ext_resource type="Script" path="res://Characters/AI.gd" id="5_t7px0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w26uh"]
 size = Vector2(31, 38)
@@ -22,3 +24,8 @@ shape = SubResource("RectangleShape2D_w26uh")
 
 [node name="Weapon" parent="." instance=ExtResource("3_3u1vn")]
 position = Vector2(24, 10)
+
+[node name="StatsManager" parent="." instance=ExtResource("4_mw1u7")]
+
+[node name="AI" type="Node2D" parent="."]
+script = ExtResource("5_t7px0")

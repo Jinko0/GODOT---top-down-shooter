@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var weapon = $Weapon 
+@onready var stats_manager = $StatsManager
 
 @export var move_speed : float = 100
 
@@ -24,4 +25,10 @@ func _physics_process(delta):
 	### SHOOT ###
 	if Input.is_action_just_pressed("shoot"):
 		weapon.shoot()
+
+
+func handle_hit():
+	stats_manager.health -= 20
+	if stats_manager.health <= 0: 
+		queue_free()
 
