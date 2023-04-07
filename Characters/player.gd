@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @onready var weapon = $Weapon 
 @onready var stats_manager = $StatsManager
@@ -30,5 +31,5 @@ func _physics_process(delta):
 func handle_hit():
 	stats_manager.health -= 20
 	if stats_manager.health <= 0: 
-		queue_free()
+		pass
 

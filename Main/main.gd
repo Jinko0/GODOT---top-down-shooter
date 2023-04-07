@@ -4,4 +4,4 @@ extends Node2D
 @onready var bullet_manager = $BulletManager
 
 func _ready():
-	player_weapon.weapon_fired_bullet.connect(bullet_manager.handle_bullet_spawned)
+	GlobalSignals.bullet_fired.connect(bullet_manager.handle_bullet_spawned)
