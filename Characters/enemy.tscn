@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://upytciph88x1"]
+[gd_scene load_steps=9 format=3 uid="uid://upytciph88x1"]
 
 [ext_resource type="Script" path="res://Characters/enemy.gd" id="1_oore0"]
 [ext_resource type="Texture2D" uid="uid://c7ng2cc48jyg3" path="res://Assets/characters.png" id="2_5akq2"]
@@ -11,6 +11,9 @@ size = Vector2(31, 38)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nje8j"]
 radius = 221.036
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0225i"]
+radius = 395.41
 
 [node name="Enemy" type="CharacterBody2D"]
 show_behind_parent = true
@@ -38,4 +41,10 @@ script = ExtResource("5_t7px0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AI/PlayerDetectionZone"]
 shape = SubResource("CircleShape2D_nje8j")
 
+[node name="PlayerLossZone" type="Area2D" parent="AI"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AI/PlayerLossZone"]
+shape = SubResource("CircleShape2D_0225i")
+
 [connection signal="body_entered" from="AI/PlayerDetectionZone" to="AI" method="_on_player_detection_zone_body_entered"]
+[connection signal="body_exited" from="AI/PlayerLossZone" to="AI" method="_on_player_loss_zone_body_exited"]

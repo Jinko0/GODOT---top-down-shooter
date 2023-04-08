@@ -8,6 +8,7 @@ enum State {
 }
 
 @onready var player_detection_zone = $PlayerDetectionZone
+@onready var player_loss_zone = $PlayerLossZone
 
 var current_state : int = State.PATROL : set = set_state
 var actor = null
@@ -43,3 +44,10 @@ func _on_player_detection_zone_body_entered(body):
 	if body.is_in_group("player"):
 		set_state(State.ENGAGE)
 		player = body
+
+
+func _on_player_loss_zone_body_exited(body):
+		if body.is_in_group("player"):
+			set_state(State.PATROL)
+			player = null
+

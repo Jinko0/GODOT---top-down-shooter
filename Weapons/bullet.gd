@@ -1,7 +1,7 @@
 extends Area2D
 class_name Bullet
 
-@export var speed : float = 500
+@export var speed : float = 200
 
 @onready var queue_free_timer = $QueueFreeTimer
 

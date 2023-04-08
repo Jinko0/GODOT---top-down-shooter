@@ -8,7 +8,7 @@ func _ready():
 	ai.initialize(self, weapon)
 
 func handle_hit():
-	stats_manager.health -= 20
+	stats_manager.health -= 1
 	if stats_manager.health <= 0:
 		queue_free()
 
